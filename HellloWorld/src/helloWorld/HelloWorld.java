@@ -5,6 +5,7 @@ public class HelloWorld {
 	public static void main(String[] args) {
 		HelloWorld hw = new HelloWorld();
 		hw.sayHello();
+		hw.saySomehing("Hello Moon");
 	}
 	
 	public void sayHello(){
