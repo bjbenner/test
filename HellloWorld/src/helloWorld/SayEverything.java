@@ -10,7 +10,9 @@ public class SayEverything {
 		for (Hello hello : h) {
 			hello.sayHello();
 		}
-
+		
+		System.out.println("Ende");
+		
 	}
 
 }
