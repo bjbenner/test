@@ -7,7 +7,7 @@ public abstract class Hello {
 	}
 
 	public final void saySomehing(String message) {
-		System.out.println(message);
+		System.out.println(this.getClass().getCanonicalName()+"\t:\t"+ message);
 	}
 	
 	public abstract void sayHello();
