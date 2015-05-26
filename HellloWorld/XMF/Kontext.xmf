@@ -1,0 +1,32 @@
+parserImport XOCL;
+import Root::Associations;
+
+context Root
+
+@Package KontextMenu metapackage Root::XCore extends Root::XCore
+ 
+	@Doc
+		Testklasse
+	end
+	
+	@Operation addKontext():XCore::Element
+	    // 'testFunktion' erscheint im Kontextmenü von Instanzen des Typs Package
+		@Menu "testFunktion" on XCore::Package
+			Root::KontextMenu::tester
+		end
+	end
+	
+	@Operation addMenu():XCore::Element
+      let t = null
+      in t := Clients::ExtensionPoints::TypeLessContribution(Seq{Seq{"&Test","Context","&Test ausführen"},Root::KontextMenu::tester});
+         xmf.registry().addContribution("com.ceteva.xmf.dropMenus",t)
+      end
+    end
+	
+	  @Operation tester():XCore::Element
+		format(stdout, "Test~%")
+	end
+	
+end 
+
+  
